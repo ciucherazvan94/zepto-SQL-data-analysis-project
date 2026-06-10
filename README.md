@@ -13,7 +13,7 @@ The dataset is based on a real e-commerce inventory structure similar to Zepto�
 
 Duplicate product names exist because products may appear in different package sizes, weights, or variations, reflecting real-world catalog behavior.
 
-🧾 Key Columns:
+🧾 Key Columns
 sku_id: Unique identifier for each product entry
 name: Product name
 category: Product category (e.g., Snacks, Beverages, Fruits)
@@ -24,9 +24,8 @@ availableQuantity: Inventory quantity available
 weightInGms: Product weight in grams
 outOfStock: Stock availability status
 quantity: Units per package
-
 🔧 Project Workflow
-1. Database Setup
+Database Setup
 DROP TABLE IF EXISTS zepto;
 
 CREATE TABLE zepto(
@@ -41,45 +40,36 @@ CREATE TABLE zepto(
   outOfStock BOOLEAN,
   quantity INTEGER
 );
-
-2. Data Import
-Loaded CSV using pgAdmin's import feature.
-
-If you're not able to use the import feature, write this code instead:
-
-   \copy zepto(category,name,mrp,discountPercent,availableQuantity,
-            discountedSellingPrice,weightInGms,outOfStock,quantity)
-  FROM 'data/zepto_v2.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
-Faced encoding issues (UTF-8 error), which were fixed by saving the CSV file using CSV UTF-8 format.
-
-3. Data Exploration
+Data Import
+\copy zepto(category,name,mrp,discountPercent,availableQuantity,
+discountedSellingPrice,weightInGms,outOfStock,quantity)
+FROM 'data/zepto_v2.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
+🔍 Data Exploration
 Understanding dataset structure
-Checking for missing or null values
-Identifying product categories
-Analyzing stock distribution
-Detecting duplicate product entries
-4. Data Cleaning
-Removing invalid or zero price records
-Converting price values from paise to rupees for standardization
-5. Business Analysis
-Identifying high-discount and value-for-money products
-Detecting high-priced items that are out of stock
-Estimating category-level revenue potential
-Finding expensive products with low discounts
-Analyzing average discount by category
-Calculating price efficiency per gram
-Segmenting products by weight categories (Low, Medium, Bulk)
-Measuring total inventory weight per category
+Checking missing values
+Identifying categories
+Stock analysis
+Duplicate product detection
+🧹 Data Cleaning
+Removing invalid/zero prices
+Converting paise → rupees
+📊 Business Insights
+High discount products
+Out-of-stock high MRP items
+Revenue estimation per category
+Price efficiency analysis
+Weight segmentation (Low / Medium / Bulk)
+Inventory weight per category
 🛠️ Tools Used
 PostgreSQL
-SQL (DDL, DML, Aggregations, CASE logic)
+SQL (DDL, DML, Aggregations, CASE)
 pgAdmin / SQL CLI
-🎯 Key Skills Demonstrated
-Database design and schema creation
-Data cleaning and transformation
-Exploratory data analysis (EDA)
-Business-oriented SQL thinking
-Extracting insights from structured data
+🎯 Key Skills
+Database design
+Data cleaning
+Exploratory data analysis
+Business analytics using SQL
 🚀 Project Goal
 
 This project demonstrates practical SQL skills applied to a real-world e-commerce dataset, focusing on transforming raw data into meaningful business insights.
