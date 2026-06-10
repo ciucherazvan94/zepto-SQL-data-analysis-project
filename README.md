@@ -1,51 +1,29 @@
 # zepto-SQL-data-analysis-project
 # 📊 Zepto SQL E-commerce Data Analysis Project
 
-SQL-based data analysis project built on a real-world e-commerce dataset (Zepto).
+SQL-based data analysis project built on a real-world e-commerce inventory dataset (Zepto). It includes database setup, data cleaning (price conversions), exploratory data analysis, and business insights such as discounts, stock availability, and product performance.
 
----
+📌 Project Overview
 
-## 📌 Project Overview
+The goal of this project is to simulate how data analysts in e-commerce or retail environments work with SQL to analyze real-world inventory data.
 
-Simulates real-world SQL analytics workflows including data cleaning, exploration, and business insights.
+The project covers the full workflow from raw data handling to business insights, including data cleaning, exploratory analysis, and analytical SQL queries to support decision-making.
 
----
+📁 Dataset Overview
 
-## 📁 Dataset Overview
+The dataset is based on a real e-commerce inventory structure similar to Zepto’s product catalog. It represents a typical retail system where each row corresponds to a unique product SKU.
 
-E-commerce inventory dataset with product SKUs, pricing, discounts, stock status, and weight information.
+Duplicate product names exist because products may appear in different package sizes, weights, or variations, reflecting real-world catalog behavior.
 
----
+🧾 Key Columns
+sku_id: Unique identifier for each product entry
+name: Product name
+category: Product category (e.g., Snacks, Beverages, Fruits)
+mrp: Maximum Retail Price (converted from paise to ₹)
+discountPercent: Discount applied on MRP
+discountedSellingPrice: Final selling price after discount
+availableQuantity: Inventory quantity available
+weightInGms: Product weight in grams
+outOfStock: Stock availability status
+quantity: Units per package
 
-## 🧾 Key Columns
-- sku_id
-- name
-- category
-- mrp
-- discountPercent
-- discountedSellingPrice
-- availableQuantity
-- weightInGms
-- outOfStock
-- quantity
-
----
-
-## 🔧 Workflow
-- Database setup in PostgreSQL  
-- Data import via CSV  
-- Data cleaning (removing invalid values, price conversion)  
-- Exploratory data analysis  
-- Business insights generation  
-
----
-
-## 🛠️ Tools Used
-- PostgreSQL
-- SQL
-- pgAdmin
-
----
-
-## 🎯 Goal
-Transform raw e-commerce data into actionable business insights using SQL.eal-world e-commerce dataset, focusing on transforming raw data into meaningful business insights.
